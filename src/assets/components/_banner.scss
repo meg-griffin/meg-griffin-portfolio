@@ -1,0 +1,18 @@
+// ----------------------------------------
+// Banner Component Styles
+// ----------------------------------------
+
+.banner {
+  background-color: var(--background-color-banner);
+  max-height: 240px;
+  color: $white;
+
+  @include for-xxs-down {
+    display: none;
+  }
+}
+
+.banner-border {
+  margin-top: -10px;
+  fill: var(--fill-banner-wave);
+}

@@ -1,0 +1,263 @@
+// ----------------------------------------
+// Flip Card Component Styles
+// ----------------------------------------
+
+// --- flipcard flip front to back transform ---
+.flip-card {
+  perspective: 1000;
+  min-height: 120px;
+}
+.flipper {
+  position: relative;
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.card-back {
+  transform: rotateY(-180deg);
+  position: absolute;
+}
+.flip-card.flipped .card-back {
+  transform: rotateY(0deg);
+}
+.flip-card.flipped .card-front {
+  transform: rotateY(180deg);
+}
+.card-front {
+  z-index: 2;
+}
+
+// --- flip card face ---
+.card-face {
+  background-color: var(--background-color-card-face);
+  border-radius: 12px;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &.hovering {
+    box-shadow: 0px 2px 8px var(--box-shadow-hover-card-face);
+  }
+}
+
+.project-images {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  max-width: 310px;
+  margin: 0 auto;
+  display: block;
+  cursor: zoom-in;
+
+  &.card-front {
+    display: flex;
+  }
+
+  &.card-back {
+    display: none;
+  }
+
+  @include for-md-down {
+    max-width: 360px;
+  }
+
+  @include for-sm-down {
+    max-width: 485px;
+  }
+}
+
+.project-showcase {
+  float: left;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1000;
+  background-color: var(--background-color-card-face);
+  opacity: 0.8;
+  padding-top: 75%;
+  color: $black;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-showcase img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  z-index: 0;
+  animation-name: showcase;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+  max-height: 95%;
+  object-fit: contain;
+
+  &.showcase-two {
+    animation-delay: -4s;
+  }
+  &.showcase-three {
+    animation-delay: -2s;
+  }
+}
+
+.project-showcase:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-logo {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.project-logo-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background: linear-gradient(
+    to top,
+    var(--background-color-card-face),
+    var(--background-color-card-gradient-mid),
+    var(--background-color-card-gradient-end)
+  );
+  border-radius: 12px;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  position: relative;
+  width: 90%;
+  height: 100%;
+  max-width: 310px;
+  margin: 0 auto;
+
+  &.card-front {
+    display: flex;
+  }
+
+  &.card-back {
+    display: none;
+  }
+
+  .project-logo {
+    opacity: 0;
+  }
+}
+
+.project-details-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  text-align: left;
+
+  .project-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: var(--background-color-card-gradient-end);
+    margin-right: 10px;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .client-name {
+    font-size: 14px;
+  }
+
+  .project-year {
+    opacity: 0.7;
+    font-size: 12px;
+  }
+}
+
+.project-category {
+  background-color: var(--background-color-project-category);
+  border-radius: 20px;
+  font-size: 12px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  margin-top: auto;
+}
+
+.project-name {
+  font-size: 16px;
+  text-align: left;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.project-description {
+  font-size: 18px;
+  align-self: center;
+  width: 100%;
+  display: flex;
+  text-align: left;
+}
+
+// --- flip card icon ---
+.flip-icon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  fill: var(--fill-flip-icon);
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.highlight-text {
+  // background: $white;
+  border-radius: 20px;
+  font-size: 14px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px;
+}
+
+// vue-easy-lightbox custom style
+.vel-toolbar {
+  display: none;
+}
+.vel-img {
+  background-color: transparent;
+  box-shadow: none;
+}

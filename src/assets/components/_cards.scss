@@ -1,0 +1,187 @@
+// ----------------------------------------
+// Card Component Styles
+// ----------------------------------------
+
+// --- cards ---
+.cards {
+  max-width: 1200px;
+  margin: 60px auto 0 auto;
+  color: var(--text-primary-color);
+
+  @include for-lg-down {
+    max-width: 1000px;
+  }
+
+  @include for-md-down {
+    max-width: 750px;
+  }
+
+  @include for-sm-down {
+    max-width: 350px;
+  }
+
+  @include for-xxs-down {
+    display: none;
+  }
+}
+
+// --- card filters---
+.card-filters {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px 0px 20px;
+
+  @include for-sm-down {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filter {
+    background-color: var(--background-color-filter);
+    padding: 2px 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    // transition: all 0.35s;
+    margin-right: 6px;
+
+    @include for-md-down {
+      font-size: 15px;
+    }
+
+    @include for-sm-down {
+      margin-bottom: 6px;
+      width: 70px;
+      justify-content: center;
+      display: flex;
+    }
+
+    @include for-xs-down {
+      min-width: 110px;
+    }
+  }
+
+  .filter.active {
+    background-color: var(--background-color-filter-active);
+    box-shadow: 0px 1px 3px 0px #00000026;
+  }
+
+  .filter:hover {
+    animation: shakeit 0.5s linear infinite both;
+  }
+
+  // --- filter select dropdown ---
+  .filter-dropdown,
+  .filter-dropdown * {
+    margin-left: auto;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    // transition: all 0.35s;
+
+    @include for-sm-down {
+      margin: 0px auto;
+    }
+  }
+  .filter-dropdown {
+    position: relative;
+    background-color: var(--background-color-filter-active);
+    border-radius: 20px;
+  }
+
+  .filter-dropdown:hover {
+    animation: shakeit 0.5s linear infinite both;
+  }
+
+  .filter-dropdown select {
+    font-size: 16px;
+    font-weight: normal;
+    max-width: 100%;
+    padding: 2px 24px 3px 10px;
+    border: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: var(--text-primary-color);
+
+    option {
+      color: $text;
+    }
+
+    @include for-md-down {
+      font-size: 15px;
+    }
+    @include for-xs-down {
+      margin: 0px 6px;
+    }
+  }
+  .filter-dropdown select:active,
+  .filter-dropdown select:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  .filter-dropdown:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    width: 0;
+    height: 0;
+    margin-top: -2px;
+    border-top: 5px solid var(--background-color-filter-active-darkened);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+}
+
+// --- cards grid ---
+.cards-grid {
+  display: grid;
+  grid-template-areas: "card card card card";
+  grid-auto-columns: minmax(0, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+
+  @include for-lg-down {
+    grid-template-areas: "card card card";
+  }
+
+  @include for-md-down {
+    grid-template-areas: "card card";
+  }
+
+  @include for-sm-down {
+    grid-template-areas:
+      "card"
+      "card"
+      "card";
+  }
+}
+
+// --- filtered cards in / out of grid --
+.card-cat {
+  transition: all 0.4s ease-in-out;
+  &.filtered {
+    transform: scale(0.85) rotate(5deg);
+    opacity: 0.5;
+    pointer-events: none;
+
+    .project-logo-gradient {
+      opacity: 0.5;
+      background: linear-gradient(
+        to top,
+        var(--background-color-card-face),
+        rgba(217, 141, 102, 0.3),
+        rgba(217, 141, 102, 0.6)
+      );
+    }
+    .flip-icon {
+      display: none;
+    }
+    .project-category,
+    .project-avatar {
+      background-color: rgba(217, 141, 102, 0.3);
+    }
+  }
+}

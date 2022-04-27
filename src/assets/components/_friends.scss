@@ -1,0 +1,515 @@
+// ----------------------------------------
+// Friends Component Styles
+// ----------------------------------------
+
+.friends {
+  display: flex;
+  justify-content: center;
+  align-items: normal;
+  background-color: transparent;
+  padding-left: 450px;
+  transition: all 0.3s;
+  overflow: hidden;
+
+  @include for-lg-down {
+    padding-left: 300px;
+  }
+
+  @include for-md-down {
+    padding-top: 30px;
+  }
+
+  @include for-sm-down {
+    padding: 0px;
+  }
+}
+
+// pots
+.moody-pot,
+.daisy-pot,
+.tulip-pot,
+.pear-pot {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @include for-md-down {
+    transform: scale(80%);
+  }
+}
+
+.moody-pot {
+  top: -50px;
+  left: 60px;
+  display: block;
+
+  @include for-lg-down {
+    left: 0px;
+  }
+  @include for-md-down {
+    top: -140px;
+    left: 160px;
+  }
+  @include for-sm-down {
+    display: block;
+    width: 100%;
+    min-height: 200px;
+    margin: 0;
+    top: 0;
+    left: 0;
+  }
+}
+
+.daisy-pot {
+  @include for-lg-down {
+    min-width: 188px;
+    left: 50px;
+  }
+  @include for-md-down {
+    top: 100px;
+    left: -100px;
+    max-height: 200px;
+  }
+}
+
+.tulip-pot {
+  left: 10px;
+
+  @include for-md-down {
+    left: -96px;
+    top: 140px;
+    max-height: 0px;
+  }
+}
+
+.pear-pot {
+  @include for-md-down {
+    left: -160px;
+  }
+}
+
+.daisy-pot,
+.tulip-pot,
+.pear-pot {
+  @include for-sm-down {
+    display: none;
+  }
+}
+
+// moody buddy
+.moody-buddy {
+  animation: scale-in-center 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  height: 140px;
+  width: 140px;
+  position: absolute;
+  top: 150px;
+  left: -450px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(50%, -50%);
+
+  @include for-lg-down {
+    left: -250px;
+  }
+  @include for-sm-down {
+    top: 0;
+    left: 0;
+    position: relative;
+    margin: 20px auto -100px auto;
+  }
+  @include for-xxs-down {
+    display: none;
+  }
+}
+
+// moody buddy's eyes
+.moody-eye {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  z-index: 1;
+  background-color: var(--background-color-eyes);
+  border-radius: 50%;
+
+  &.left {
+    left: 34px;
+    top: 100px;
+  }
+
+  &.right {
+    left: 80px;
+    top: 100px;
+  }
+
+  span {
+    position: absolute;
+    transition: all 0.3s;
+    width: 12px;
+    height: 12px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background: $black;
+    border-radius: 50%;
+    animation: blink 10s infinite 3s;
+  }
+}
+
+// moody buddy at night
+.night-theme {
+  // moody buddy's pupils
+  .moody-eye {
+    span {
+      width: 10px;
+      height: 16px;
+      margin-top: 6px;
+    }
+  }
+}
+
+// moody buddy's speech bubble
+.moody-bubble {
+  cursor: pointer;
+  background-color: var(--background-color-bubble);
+  border-radius: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  position: relative;
+  font-size: 12px;
+  color: $black;
+  margin-top: 180px;
+  margin-left: -392px;
+  animation: scale-in-center 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 3.5s;
+
+  @include for-lg-down {
+    margin-left: -192px;
+  }
+
+  @include for-md-down {
+    font-size: 14px;
+    margin-left: -202px;
+  }
+
+  @include for-sm-down {
+    display: none;
+  }
+
+  &:before {
+    background-color: var(--background-color-bubble);
+    border-radius: 100%;
+    content: "";
+    width: 1.5em;
+    height: 0.5em;
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    margin-left: -0.5em;
+    transform: rotate(-35deg);
+  }
+}
+
+// daisy buddy
+.daisy-buddy {
+  position: relative;
+  transform: rotate(180deg);
+  margin-top: 50px;
+  animation: roll-in-right 1.4s ease-out both 1.8s;
+}
+
+// daisy buddy's head
+.daisy-head {
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--background-color-daisy);
+  margin-top: 50px;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--background-color-daisy);
+    border-radius: 20px;
+    width: 120px;
+    height: 40px;
+    transform: rotate(60deg);
+  }
+
+  &::before {
+    transform: rotate(-60deg);
+  }
+}
+
+// daisy buddy's eyes
+.daisy-eye {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  background-color: var(--background-color-eyes);
+  border-radius: 50%;
+
+  &.left {
+    left: 34px;
+  }
+
+  &.right {
+    left: 66px;
+  }
+
+  span {
+    position: absolute;
+    transition: all 0.3s;
+    width: 10px;
+    height: 10px;
+    margin-left: 2px;
+    margin-top: 4px;
+    background: $black;
+    border-radius: 50%;
+    animation: growing 10s infinite 1s;
+  }
+}
+
+// daisy buddy at night
+.night-theme {
+  // daisy buddy's pupils
+  .daisy-eye {
+    span {
+      width: 7px;
+      height: 13px;
+      margin-left: 4px;
+    }
+  }
+}
+
+// daisy buddy's speech bubble
+.daisy-bubble {
+  background-color: var(--background-color-bubble);
+  border-radius: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  position: relative;
+  font-size: 12px;
+  color: $black;
+  margin-top: -50px;
+  margin-left: -90px;
+  animation: fade-in-fwd 1.4s cubic-bezier(0.39, 0.575, 0.565, 1) both 2.8s;
+
+  @include for-md-down {
+    font-size: 14px;
+    min-width: 138px;
+  }
+
+  &:before {
+    background-color: var(--background-color-bubble);
+    border-radius: 100%;
+    content: "";
+    width: 1.5em;
+    height: 0.5em;
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    margin-left: -0.5em;
+    transform: rotate(-35deg);
+  }
+}
+
+// tulip dude
+.tulip-dude {
+  animation: bounce-in-top 3s both 3s;
+  margin-top: 220px;
+}
+
+.tulip-head {
+  display: flex;
+}
+
+.tulip-petal {
+  border-radius: 50%;
+  width: 32px;
+  height: 90px;
+  background-color: var(--background-color-tulip);
+
+  &.left {
+    transform: rotate(-30deg);
+    margin-right: -11px;
+  }
+
+  &.right {
+    transform: rotate(30deg);
+    margin-left: -11px;
+  }
+
+  &.middle {
+    height: 52px;
+  }
+}
+
+// tulip dude's eyes
+.tulip-eye {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  z-index: 1;
+  background-color: var(--background-color-eyes);
+  border-radius: 50%;
+
+  &.left {
+    left: 12px;
+    top: 46px;
+  }
+
+  &.right {
+    left: 48px;
+    top: 46px;
+  }
+
+  span {
+    position: absolute;
+    transition: all 0.3s;
+    width: 7px;
+    height: 7px;
+    margin-left: 3px;
+    margin-top: 4px;
+    background: $black;
+    border-radius: 50%;
+    animation: blink 6s infinite 3s;
+  }
+}
+
+// tulip dude at night
+.night-theme {
+  // tulip dude's pupils
+  .tulip-eye {
+    span {
+      width: 6px;
+      height: 9px;
+      margin-top: 2px;
+    }
+  }
+}
+
+// tulip dude's speech bubble
+.tulip-bubble {
+  background-color: var(--background-color-bubble);
+  border-radius: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  position: relative;
+  font-size: 12px;
+  color: $black;
+  margin-top: 90px;
+  margin-left: -40px;
+  animation: bounce-in-top 3.1s both 3s;
+
+  @include for-lg-down {
+    width: 90px;
+    margin-left: -56px;
+  }
+
+  @include for-md-down {
+    width: 106px;
+    font-size: 14px;
+  }
+
+  &:before {
+    background-color: var(--background-color-bubble);
+    border-radius: 100%;
+    content: "";
+    width: 1.5em;
+    height: 0.5em;
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    margin-left: -0.5em;
+    transform: rotate(-35deg);
+  }
+}
+
+// pear pal
+.pear-pal {
+  position: relative;
+  animation: scale-in-center 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  > svg {
+    width: 300px;
+    transform: scaleX(-1);
+    fill: var(--fill-color-pear-pal);
+  }
+}
+
+// pear pal's speech bubble
+.pear-bubble {
+  background-color: var(--background-color-bubble);
+  border-radius: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  position: relative;
+  font-size: 12px;
+  color: $black;
+  margin-top: -120px;
+  margin-right: -140px;
+  z-index: 1;
+  animation: fade-in-fwd 1.4s cubic-bezier(0.39, 0.575, 0.565, 1) both 1s;
+
+  @include for-md-down {
+    font-size: 14px;
+  }
+
+  &:before {
+    background-color: var(--background-color-bubble);
+    border-radius: 100%;
+    content: "";
+    width: 1.5em;
+    height: 0.5em;
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    margin-left: -0.5em;
+    transform: rotate(35deg);
+  }
+}
+
+// pear pal's eyes
+.pear-eye {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+  background-color: var(--background-color-eyes);
+  border-radius: 50%;
+
+  &.left {
+    left: 70px;
+    top: 140px;
+  }
+
+  &.right {
+    left: 140px;
+    top: 140px;
+  }
+
+  span {
+    position: absolute;
+    transition: all 1s;
+    width: 40px;
+    height: 40px;
+    margin-left: 4px;
+    margin-top: 12px;
+    background: $black;
+    border-radius: 50%;
+    animation: looking 20s infinite 3s;
+  }
+}
+
+// pear pal at night
+.night-theme {
+  // pear pal's pupils
+  .pear-eye {
+    span {
+      width: 20px;
+      margin-left: 8px;
+    }
+  }
+}

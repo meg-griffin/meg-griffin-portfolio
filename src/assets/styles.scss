@@ -1,0 +1,16 @@
+// --Base and global styles--
+@import 
+    "basics/base", 
+    "basics/colors",
+    "basics/layouts",
+    "basics/animations";
+
+// --Component styles--
+@import 
+    "components/friends",
+    "components/theme",
+    "components/header",
+    "components/banner", 
+    "components/cards", 
+    "components/flipcard", 
+    "components/content";

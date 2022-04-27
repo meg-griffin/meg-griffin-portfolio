@@ -1,0 +1,89 @@
+// ----------------------------------------
+// Day (Light) vs Night (Dark) Theme Component Styles
+// ----------------------------------------
+
+// hide the checkbox input
+.theme-toggle {
+  display: none;
+}
+
+// disguise the theme as a moody buddy sun / moon
+.moody-buddy {
+  // sun hover motion
+  &:hover .day-sun-ray {
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        transform: rotate(calc(calc(#{$i} * calc(360deg / 12)) - 20deg));
+      }
+    }
+  }
+}
+
+// sun body
+.moody-buddy .day-sun {
+  background-color: var(--background-color-moody);
+  border: 4px solid var(--background-color-header);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+// sun rays
+.moody-buddy .day-sun-ray {
+  background-color: var(--background-color-moody);
+  width: 20px;
+  border-radius: 20px;
+  display: block;
+  height: 121%;
+  position: absolute;
+  z-index: -1;
+  transition: 0.4s all, height 0.3s ease-in-out;
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+      transform: rotate(calc(#{$i} * calc(360deg / 12)));
+    }
+  }
+}
+
+// moon negative space
+.night-moon {
+  background-color: var(--background-color-header);
+  height: 106px;
+  width: 106px;
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  transform: scale(0) translate(25%, -25%);
+  z-index: 9;
+  transition: 0.4s transform;
+  transform-origin: right;
+}
+
+.night-theme {
+  .moody-buddy {
+    background-color: transparent;
+  }
+
+  // moon hover motion
+  .moody-buddy:hover {
+    .night-moon {
+      transform: scale(1) translate(-3%, -18%);
+    }
+  }
+
+  .night-moon {
+    transform: scale(1) translate(11%, -11%);
+  }
+
+  // hide sun rays at night time
+  .moody-buddy .day-sun-ray {
+    height: 0;
+    transition: 0.4s, transform 0.4s, height 0.2s 0.1s;
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        transform: rotate(calc(calc(#{$i} * calc(360deg / 12)) - 45deg));
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+// ----------------------------------------
+// Header Component Styles
+// ----------------------------------------
+
+.header {
+  background-color: var(--background-color-header);
+  height: 240px;
+
+  @include for-sm-down {
+    height: 160px;
+  }
+
+  .header-text {
+    font-family: Varela Round;
+    font-size: 10vw;
+
+    @include for-lg-up {
+      font-size: 120px;
+    }
+    @include for-xs-down {
+      font-size: 50px;
+    }
+    @include for-xxs-down {
+      font-size: 13vw;
+    }
+  }
+
+  .stop-one {
+    stop-color: var(--stop-color-primary);
+  }
+  .stop-two {
+    stop-color: var(--stop-color-secondary);
+  }
+  .stop-three {
+    stop-color: var(--stop-color-primary);
+  }
+  .stop-four {
+    stop-color: var(--stop-color-secondary);
+  }
+  .stop-five {
+    stop-color: var(--stop-color-primary);
+  }
+
+  .header-border {
+    margin-top: -10px;
+    fill: var(--background-color-header);
+  }
+}

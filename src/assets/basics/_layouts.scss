@@ -1,0 +1,45 @@
+// ----------------------------------------
+// Custom Responsive Layout Mixins
+// ----------------------------------------
+
+// Extra extra small devices and down
+@mixin for-xxs-down {
+  @media (max-width: 374px) {
+    @content;
+  }
+}
+
+// Extra small devices and down
+@mixin for-xs-down {
+  @media (max-width: 475px) {
+    @content;
+  }
+}
+
+// Small devices and down
+@mixin for-sm-down {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+// Medium devices and down
+@mixin for-md-down {
+  @media (max-width: 899px) {
+    @content;
+  }
+}
+
+// Large devices and down
+@mixin for-lg-down {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+// Large devices and up
+@mixin for-lg-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

@@ -1,0 +1,91 @@
+// ----------------------------------------
+// Color Palettes and Themes
+// ----------------------------------------
+
+// utility colors
+$white: #fff;
+$black: #000;
+$text: #2a292e;
+
+// day theme
+$grape: #43039a;
+$lilac: #cdc2dc;
+$aqua: #00dbff;
+$lime: #a6e519;
+$lemon: #e8ef01;
+$flamingo: #ff4ba0;
+$strawberry: #cb351d;
+$cocoa: #642f31;
+$tortilla: #d98d66;
+$peach: #ffbea4;
+$sorbet: #ffe1d7;
+$sandworm: #e9d9d8;
+
+// night theme
+$charcoal: #1d1b20;
+$mint: #9edeb7;
+$uvlight: #610894;
+$coffee: #422432;
+$clay: #3e4c44;
+$mud: #422f27;
+$glowworm: #c0ff12;
+$silt: #3d3b3a;
+$asphalt: #24222b;
+$dust: #43432b;
+$stardust: #f4fddb;
+
+// day theme
+:root {
+  --text-primary-color: #{$text};
+  --background-color-header: #{$grape};
+  --stop-color-primary: #{$flamingo};
+  --stop-color-secondary: #{$lime};
+  --background-color-eyes: #{$white};
+  --background-color-moody: #{$mint};
+  --background-color-daisy: #{$flamingo};
+  --background-color-tulip: #{$strawberry};
+  --fill-color-pear-pal: #{$lemon};
+  --background-color-bubble: #{$peach};
+  --background-color-filter: #{$tortilla};
+  --background-color-filter-active: #{$lime};
+  --background-color-filter-active-darkened: #{darken($lime, 20%)};
+  --background-color-card-face: #{$sandworm};
+  --box-shadow-hover-card-face: #{$peach};
+  --background-color-card-gradient-mid: rgba(232, 239, 1, 0.3);
+  --background-color-card-gradient-end: rgba(232, 239, 1, 0.7);
+  --background-color-project-category: #{$lime};
+  --fill-flip-icon: #{$black};
+  --fill-banner-wave: #{$sorbet};
+  --background-color-banner: #{$grape};
+  --background-color-content: #{$lilac};
+  --background-color-link-start: #{$aqua};
+  --background-color-link-end: #{$flamingo};
+}
+
+// night theme
+:root.night-theme {
+  --text-primary-color: #{$white};
+  --background-color-header: #{$charcoal};
+  --stop-color-primary: #{$uvlight};
+  --stop-color-secondary: #{$grape};
+  --background-color-eyes: #{$stardust};
+  --background-color-moody: #{$peach};
+  --background-color-daisy: #{$coffee};
+  --background-color-tulip: #{$mud};
+  --fill-color-pear-pal: #{$dust};
+  --background-color-bubble: #{$mint};
+  --background-color-filter: #{$clay};
+  --background-color-filter-active: #{$uvlight};
+  --background-color-filter-active-darkened: #{lighten($uvlight, 20%)};
+  --background-color-card-face: #{$asphalt};
+  --box-shadow-hover-card-face: #{$mud};
+  --background-color-card-gradient-mid: rgba(192, 255, 18, 0.3);
+  --background-color-card-gradient-end: rgba(192, 255, 18, 0.7);
+  --background-color-project-category: #{$uvlight};
+  --fill-flip-icon: #{$white};
+  --fill-banner-wave: #{$silt};
+  --background-color-banner: #{$charcoal};
+  --background-color-content: #{$mint};
+  --background-color-link-start: #{$uvlight};
+  --background-color-link-end: #{$peach};
+}
