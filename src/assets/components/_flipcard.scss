@@ -5,6 +5,7 @@
 // --- flipcard flip front to back transform ---
 .flip-card {
   perspective: 1000;
+  -webkit-perspective: 1000;
   min-height: 120px;
 }
 .flipper {
@@ -14,21 +15,27 @@
 .card-front,
 .card-back {
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   transition: 0.6s;
+  -webkit-transition: 0.6s;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   top: 0;
   left: 0;
   width: 100%;
 }
 .card-back {
   transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
   position: absolute;
 }
 .flip-card.flipped .card-back {
   transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
 }
 .flip-card.flipped .card-front {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 .card-front {
   z-index: 2;
@@ -92,6 +99,7 @@
   font-weight: bold;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
 }
 
 .project-showcase img {
@@ -103,22 +111,28 @@
   width: 100%;
   z-index: 0;
   animation-name: showcase;
+  -webkit-animation-name: showcase;
   animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
   animation-duration: 6s;
+  -webkit-animation-duration: 6s;
   max-height: 95%;
   object-fit: contain;
 
   &.showcase-two {
     animation-delay: -4s;
+    -webkit-animation-delay: -4s;
   }
   &.showcase-three {
     animation-delay: -2s;
+    -webkit-animation-delay: -2s;
   }
 }
 
 .project-showcase:hover {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
 }
 
 .project-logo {

@@ -9,6 +9,7 @@
   background-color: transparent;
   padding-left: 450px;
   transition: all 0.3s;
+  -webkit-transition: all 0.3s;
   overflow: hidden;
 
   @include for-lg-down {
@@ -35,6 +36,7 @@
 
   @include for-md-down {
     transform: scale(80%);
+    -webkit-transform: scale(80%);
   }
 }
 
@@ -99,6 +101,8 @@
 // moody buddy
 .moody-buddy {
   animation: scale-in-center 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: scale-in-center 5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
   height: 140px;
   width: 140px;
   position: absolute;
@@ -109,6 +113,7 @@
   align-items: center;
   justify-content: center;
   transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%);
 
   @include for-lg-down {
     left: -250px;
@@ -146,6 +151,7 @@
   span {
     position: absolute;
     transition: all 0.3s;
+    -webkit-transition: all 0.3s;
     width: 12px;
     height: 12px;
     margin-left: 10px;
@@ -153,6 +159,7 @@
     background: $black;
     border-radius: 50%;
     animation: blink 10s infinite 3s;
+    -webkit-animation: blink 10s infinite 3s;
   }
 }
 
@@ -180,7 +187,9 @@
   color: $black;
   margin-top: 180px;
   margin-left: -392px;
-  animation: scale-in-center 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 3.5s;
+  animation: scale-in-center 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 3 5s;
+  -webkit-animation: scale-in-center 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both 3 5s;
 
   @include for-lg-down {
     margin-left: -192px;
@@ -206,6 +215,7 @@
     bottom: -2px;
     margin-left: -0.5em;
     transform: rotate(-35deg);
+    -webkit-transform: rotate(-35deg);
   }
 }
 
@@ -213,8 +223,10 @@
 .daisy-buddy {
   position: relative;
   transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
   margin-top: 50px;
   animation: roll-in-right 1.4s ease-out both 1.8s;
+  -webkit-animation: roll-in-right 1.4s ease-out both 1.8s;
 }
 
 // daisy buddy's head
@@ -234,10 +246,12 @@
     width: 120px;
     height: 40px;
     transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
   }
 
   &::before {
     transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
   }
 }
 
@@ -261,6 +275,7 @@
   span {
     position: absolute;
     transition: all 0.3s;
+    -webkit-transition: all 0.3s;
     width: 10px;
     height: 10px;
     margin-left: 2px;
@@ -268,6 +283,7 @@
     background: $black;
     border-radius: 50%;
     animation: growing 10s infinite 1s;
+    -webkit-animation: growing 10s infinite 1s;
   }
 }
 
@@ -295,6 +311,8 @@
   margin-top: -50px;
   margin-left: -90px;
   animation: fade-in-fwd 1.4s cubic-bezier(0.39, 0.575, 0.565, 1) both 2.8s;
+  -webkit-animation: fade-in-fwd 1.4s cubic-bezier(0.39, 0.575, 0.565, 1) both
+    2.8s;
 
   @include for-md-down {
     font-size: 14px;
@@ -312,12 +330,14 @@
     bottom: -2px;
     margin-left: -0.5em;
     transform: rotate(-35deg);
+    -webkit-transform: rotate(-35deg);
   }
 }
 
 // tulip dude
 .tulip-dude {
   animation: bounce-in-top 3s both 3s;
+  -webkit-animation: bounce-in-top 3s both 3s;
   margin-top: 220px;
 }
 
@@ -333,11 +353,13 @@
 
   &.left {
     transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
     margin-right: -11px;
   }
 
   &.right {
     transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
     margin-left: -11px;
   }
 
@@ -368,6 +390,7 @@
   span {
     position: absolute;
     transition: all 0.3s;
+    -webkit-transition: all 0.3s;
     width: 7px;
     height: 7px;
     margin-left: 3px;
@@ -375,6 +398,7 @@
     background: $black;
     border-radius: 50%;
     animation: blink 6s infinite 3s;
+    -webkit-animation: blink 6s infinite 3s;
   }
 }
 
@@ -402,6 +426,7 @@
   margin-top: 90px;
   margin-left: -40px;
   animation: bounce-in-top 3.1s both 3s;
+  -webkit-animation: bounce-in-top 3.1s both 3s;
 
   @include for-lg-down {
     width: 90px;
@@ -424,6 +449,7 @@
     bottom: -2px;
     margin-left: -0.5em;
     transform: rotate(-35deg);
+    -webkit-transform: rotate(-35deg);
   }
 }
 
@@ -431,10 +457,13 @@
 .pear-pal {
   position: relative;
   animation: scale-in-center 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: scale-in-center 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
 
   > svg {
     width: 300px;
     transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
     fill: var(--fill-color-pear-pal);
   }
 }
@@ -452,6 +481,8 @@
   margin-right: -140px;
   z-index: 1;
   animation: fade-in-fwd 1.4s cubic-bezier(0.39, 0.575, 0.565, 1) both 1s;
+  -webkit-animation: fade-in-fwd 1.4s cubic-bezier(0.39, 0.575, 0.565, 1) both
+    1s;
 
   @include for-md-down {
     font-size: 14px;
@@ -468,6 +499,7 @@
     bottom: -2px;
     margin-left: -0.5em;
     transform: rotate(35deg);
+    -webkit-transform: rotate(35deg);
   }
 }
 
@@ -493,6 +525,7 @@
   span {
     position: absolute;
     transition: all 1s;
+    -webkit-transition: all 1s;
     width: 40px;
     height: 40px;
     margin-left: 4px;
@@ -500,6 +533,7 @@
     background: $black;
     border-radius: 50%;
     animation: looking 20s infinite 3s;
+    -webkit-animation: looking 20s infinite 3s;
   }
 }
 
