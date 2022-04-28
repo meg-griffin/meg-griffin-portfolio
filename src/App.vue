@@ -19,12 +19,6 @@ import Cards from "./components/Cards.vue";
 
 <style lang="scss">
 @import "assets/styles";
-
-#app {
-  font-family: "Varela Round", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 </style>
 
 

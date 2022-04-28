@@ -10,9 +10,21 @@
   --background-color-primary: #3d3b3a;
 }
 
+/* Varela Round */
+@font-face {
+  font-family: "Varela Round";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/varela-round-regular.woff2") format("woff2"),
+    url("../fonts/varela-round-regular.woff") format("woff");
+}
+
 body {
   margin: 0px;
   background-color: var(--background-color-primary);
+  font-family: Varela Round, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 // screen reader class
