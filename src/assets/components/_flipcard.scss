@@ -66,6 +66,7 @@
   margin: 0 auto;
   display: block;
   cursor: zoom-in;
+  overflow: hidden;
 
   &.card-front {
     display: flex;
@@ -87,10 +88,10 @@
 .project-showcase {
   float: left;
   position: absolute;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
+  left: -1px;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
   z-index: 1000;
   background-color: var(--background-color-card-face);
   opacity: 0.8;
@@ -100,6 +101,7 @@
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   -webkit-transition: opacity 0.3s ease-in-out;
+  height: 100%;
 }
 
 .project-showcase img {
@@ -250,7 +252,7 @@
   height: 18px;
   position: absolute;
   bottom: 20px;
-  right: 20px;
+  // right: 20px;
   z-index: 9999;
   fill: var(--fill-flip-icon);
   opacity: 0.3;

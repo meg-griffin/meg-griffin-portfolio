@@ -40,11 +40,10 @@
           <h2>About meggriff.in</h2>
           <p>
             This portfolio was built using Vue 3, Sass, CSS &amp; SVG
-            animations, VS Code, and GitHub Pages.
+            animations, VS Code, GitHub, and Netlify.
           </p>
           <p>Creative direction provided by my seven-year-old daughter.</p>
           <p>(ʘ‿ʘ)ノ✿</p>
-
 
           <p class="mt-auto">
             <small>&copy; 2022 Meg Griffin</small>
