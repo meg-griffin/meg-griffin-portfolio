@@ -187,9 +187,9 @@
   color: $black;
   margin-top: 180px;
   margin-left: -392px;
-  animation: scale-in-center 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 3 5s;
+  animation: scale-in-center 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 3.5s;
   -webkit-animation: scale-in-center 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both 3 5s;
+    both 3.5s;
 
   @include for-lg-down {
     margin-left: -192px;
