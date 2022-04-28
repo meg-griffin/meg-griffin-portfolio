@@ -3,30 +3,13 @@
     <!-- card filters -->
     <div class="card-filters">
       <label class="sr-only">Filter:</label>
-      <span
-        class="filter"
-        :class="{ active: currentFilter === 'All' }"
-        @click="setFilter('All')"
-        >All</span
-      >
-      <span
-        class="filter"
-        :class="{ active: currentFilter === 'Education' }"
-        @click="setFilter('Education')"
-        >Education</span
-      >
-      <span
-        class="filter"
-        :class="{ active: currentFilter === 'Corporate' }"
-        @click="setFilter('Corporate')"
-        >Corporate</span
-      >
-      <span
-        class="filter"
-        :class="{ active: currentFilter === 'Lifestyle' }"
-        @click="setFilter('Lifestyle')"
-        >Lifestyle</span
-      >
+      <span class="filter" :class="{ active: currentFilter === 'All' }" @click="setFilter('All')">All</span>
+      <span class="filter" :class="{ active: currentFilter === 'Education' }"
+        @click="setFilter('Education')">Education</span>
+      <span class="filter" :class="{ active: currentFilter === 'Corporate' }"
+        @click="setFilter('Corporate')">Corporate</span>
+      <span class="filter" :class="{ active: currentFilter === 'Lifestyle' }"
+        @click="setFilter('Lifestyle')">Lifestyle</span>
 
       <span class="filter-dropdown">
         <label for="select" class="sr-only">Sort By:</label>
@@ -38,44 +21,22 @@
     </div>
 
     <div class="cards-grid">
-      <div
-        :key="card.id"
-        v-for="card in filteredCards"
-        class="card-cat all"
-        :class="card.filter.toLowerCase()"
-      >
+      <div :key="card.id" v-for="card in filteredCards" class="card-cat all" :class="card.filter.toLowerCase()">
         <!-- flip card component -->
-        <FlipCard
-          :fullOne="card.fullOne"
-          :fullTwo="card.fullTwo"
-          :fullThree="card.fullThree"
-        >
+        <FlipCard :fullOne="card.fullOne" :fullTwo="card.fullTwo" :fullThree="card.fullThree">
           <!-- flip card slot front -->
           <template v-slot:front="front">
             <!-- project images side -->
+            <div class="project-category">
+              {{ card.filter }}
+            </div>
             <div class="project-images" @click="front.zoom">
               <div class="project-showcase">
-                <img
-                  class="showcase-one"
-                  :src="card.thumbOne"
-                  :alt="card.clientName"
-                />
-                <img
-                  class="showcase-two"
-                  :src="card.thumbTwo"
-                  :alt="card.clientName"
-                />
-                <img
-                  class="showcase-three"
-                  :src="card.thumbThree"
-                  :alt="card.clientName"
-                />
+                <img class="showcase-one" :src="card.thumbOne" :alt="card.clientName" />
+                <img class="showcase-two" :src="card.thumbTwo" :alt="card.clientName" />
+                <img class="showcase-three" :src="card.thumbThree" :alt="card.clientName" />
               </div>
-              <img
-                class="project-logo"
-                :src="card.logo"
-                :alt="card.clientName"
-              />
+              <img class="project-logo" :src="card.logo" :alt="card.clientName" />
               <div class="project-logo-gradient"></div>
             </div>
           </template>
@@ -84,11 +45,7 @@
           <template v-slot:back>
             <!-- project details side -->
             <div class="project-details">
-              <img
-                class="project-logo"
-                :src="card.logo"
-                :alt="card.clientName"
-              />
+              <img class="project-logo" :src="card.logo" :alt="card.clientName" />
               <div class="project-details-text">
                 <div class="details-header">
                   <div class="project-avatar">
@@ -110,9 +67,7 @@
                 <div class="project-description">
                   <span class="highlight-text">{{ card.description }}</span>
                 </div>
-                <div class="project-category">
-                  {{ card.filter }}
-                </div>
+
               </div>
             </div>
             <!-- <div class="project-logo-gradient"></div> -->

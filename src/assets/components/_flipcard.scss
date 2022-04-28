@@ -82,6 +82,7 @@
 
   @include for-sm-down {
     max-width: 485px;
+    cursor: auto;
   }
 }
 
@@ -110,8 +111,9 @@
   top: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100%;
+  width: 90%;
   z-index: 0;
+  margin: 0 auto;
   animation-name: showcase;
   -webkit-animation-name: showcase;
   animation-iteration-count: infinite;
@@ -229,6 +231,10 @@
   justify-content: center;
   padding: 2px;
   margin-top: auto;
+  position: absolute;
+  left: 30px;
+  top: 28px;
+  z-index: 1;
 }
 
 .project-name {
@@ -248,15 +254,33 @@
 
 // --- flip card icon ---
 .flip-icon {
-  width: 18px;
-  height: 18px;
+  width: auto;
+  height: 20px;
+  font-size: 12px;
   position: absolute;
-  bottom: 20px;
-  // right: 20px;
+  bottom: 10px;
   z-index: 9999;
-  fill: var(--fill-flip-icon);
-  opacity: 0.3;
+  background-color: var(--background-color-filter-active);
+  // box-shadow: 0px 1px 3px 0px #00000026;
+  padding: 2px 16px;
+  border-radius: 12px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: var(--background-color-filter-active);
+  }
+
+  svg {
+    display: none;
+    margin-left: 4px;
+    fill: var(--fill-flip-icon);
+    opacity: 0.3;
+    width: 14px;
+    height: 14px;
+  }
 }
 
 .highlight-text {
@@ -276,4 +300,10 @@
 .vel-img {
   background-color: transparent;
   box-shadow: none;
+}
+
+.vel-modal {
+  @include for-sm-down {
+    display: none;
+  }
 }
